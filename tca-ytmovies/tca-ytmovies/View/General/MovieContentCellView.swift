@@ -25,13 +25,13 @@ struct MovieContentCellView: View {
                 Text(String(format: "%.1f", movie?.rating ?? 0.0))
                     .font(.poppinsMedium22)
                 
-                Text(movie?.genre ?? "")
-                    .font(.poppinsRegular14)
+//                Text(movie?.genre ?? "")
+//                    .font(.poppinsRegular14)
                 
-                Text(movie?.content ?? "")
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(5)
-                    .font(.poppinsRegular13)
+//                Text(movie?.content ?? "")
+//                    .multilineTextAlignment(.leading)
+//                    .lineLimit(5)
+//                    .font(.poppinsRegular13)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -40,5 +40,5 @@ struct MovieContentCellView: View {
 }
 
 #Preview {
-    MovieContentCellView(movie: .stub01)
+    MovieContentCellView(movie: .none)
 }

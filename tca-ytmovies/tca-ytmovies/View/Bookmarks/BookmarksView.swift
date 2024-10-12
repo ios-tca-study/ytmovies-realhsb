@@ -16,11 +16,11 @@ struct BookmarksView: View {
     
     var contentView: some View {
         VStack {
-            MovieContentCellView(movie: .stub01)
-            MovieContentCellView(movie: .stub01)
-            MovieContentCellView(movie: .stub01)
-            MovieContentCellView(movie: .stub01)
-            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
         }
     }
 }

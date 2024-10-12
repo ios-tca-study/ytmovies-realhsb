@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct HomeView: View {
+    
+    @Bindable var store: StoreOf<Home>
+    
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 30) {
@@ -72,10 +76,10 @@ struct HomeView: View {
     
     func latestView() -> some View {
         VStack {
-            MovieContentCellView(movie: .stub01)
-            MovieContentCellView(movie: .stub01)
-            MovieContentCellView(movie: .stub01)
-            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
+//            MovieContentCellView(movie: .stub01)
         }
         
     }
@@ -103,6 +107,6 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    HomeView()
+//}

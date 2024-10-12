@@ -20,14 +20,14 @@ struct DetailView: View {
             Text(String(format: "%.1f", movie?.rating ?? 0.0))
                 .font(.poppinsMedium22)
             
-            Text(movie?.content ?? "")
-                .font(.poppinsRegular16)
+//            Text(movie?.content ?? "")
+//                .font(.poppinsRegular16)
                 
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
-#Preview {
-    DetailView(movie: .stub01)
-}
+//#Preview {
+////    DetailView(movie: .stub01)
+//}

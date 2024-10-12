@@ -17,7 +17,8 @@ struct MainTabView: View {
                 Group {
                     switch tab {
                     case .home:
-                        HomeView()
+//                        HomeView()
+                        Text("Home")
                     case .search:
                         SearchView()
                     case .bookmark:
