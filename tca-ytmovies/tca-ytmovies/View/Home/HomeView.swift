@@ -10,24 +10,31 @@ import ComposableArchitecture
 
 struct HomeView: View {
     
-    @Bindable var store: StoreOf<Home>
+    @Bindable var store: StoreOf<HomeFeature>
     
     var body: some View {
-        ScrollView(.vertical) {
-            VStack(alignment: .leading, spacing: 30) {
-                headerView(header: "Top Five")
-                topFiveView
-                VStack {
-                    HStack {
-                        headerView(header: "Latest")
-                        Spacer()
-                        seeMoreButtonView
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ScrollView(.vertical) {
+                VStack(alignment: .leading, spacing: 30) {
+                    headerView(header: "Top Five")
+                    topFiveView
+                    VStack {
+                        HStack {
+                            headerView(header: "Latest")
+                            Spacer()
+                            seeMoreButtonView
+                        }
+                        latestView()
                     }
-                    latestView()
+                    
                 }
-                
+                .padding(.horizontal, 16)
             }
-            .padding(.horizontal, 16)
+        }
+        .onAppear {
+            // TODO: 한 번에 호출하도록 수정
+            store.send(.getLatestMovie)
+            store.send(.getTopFiveMovies)
         }
     }
     
@@ -44,27 +51,42 @@ struct HomeView: View {
     var topFiveView: some View {
         ScrollView(.horizontal) {
             HStack {
-                topFiveViewCell(title: "Hitman’s Wife’s Bodyguard", rating: 3.5)
-                topFiveViewCell(title: "Hitman’s Wife’s Bodyguard", rating: 3.5)
-                topFiveViewCell(title: "Hitman’s Wife’s Bodyguard", rating: 3.5)
-                topFiveViewCell(title: "Hitman’s Wife’s Bodyguard", rating: 3.5)
-                topFiveViewCell(title: "Hitman’s Wife’s Bodyguard", rating: 3.5)
+                ForEach(store.topFiveMovies) { movie in
+                    topFiveViewCell(movie: movie)
+                }
                 
             }
         }
     }
     
     @ViewBuilder
-    func topFiveViewCell(title: String, rating: Double) -> some View {
+    func topFiveViewCell(movie: Movie) -> some View {
         VStack(alignment: .leading) {
-            Image("")
-                .frame(width: 300, height: 200)
-                .background(Color.black)
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-            Text(title)
+            AsyncImage(url:
+                        URL(string: movie.largeCoverImage ?? "")) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 300, height: 200)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                    
+                case .empty:
+                    Text("none")
+                case .failure(_):
+                    Text("none")
+                @unknown default:
+                    Text("none")
+                }
+            }
+            
+            Text(movie.title ?? "")
+                .foregroundStyle(Color.white)
                 .font(.poppinsBold20)
             HStack {
-                Text(String(format: "%.1f", rating))
+                Text(String(format: "%.1f", movie.rating ?? 0.0))
+                    .foregroundStyle(Color.white)
                     .font(.poppinsMedium22)
             }
         }
@@ -76,10 +98,7 @@ struct HomeView: View {
     
     func latestView() -> some View {
         VStack {
-//            MovieContentCellView(movie: .stub01)
-//            MovieContentCellView(movie: .stub01)
-//            MovieContentCellView(movie: .stub01)
-//            MovieContentCellView(movie: .stub01)
+            MovieContentCellView(movie: store.latestMovie)
         }
         
     }
@@ -106,7 +125,3 @@ struct HomeView: View {
         .padding(.horizontal, 16)
     }
 }
-
-//#Preview {
-//    HomeView()
-//}

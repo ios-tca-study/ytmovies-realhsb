@@ -14,6 +14,7 @@ struct TopFiveMovieUseCase {
         self.repository = repository
     }
     
+    /// Top5 영화 조회
     public func execute() async throws -> [Movie] {
         let movies = try await repository.fetchMovies(sort: "", limit: 5)
         return movies

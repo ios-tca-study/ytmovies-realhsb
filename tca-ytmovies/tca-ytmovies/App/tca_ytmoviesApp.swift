@@ -11,7 +11,7 @@ import SwiftUI
 struct tca_ytmoviesApp: App {
     var body: some Scene {
         WindowGroup {
-//            HomeView()
+            MainTabView()
         }
     }
 }

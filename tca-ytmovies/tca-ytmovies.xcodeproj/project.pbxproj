@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C6B17312CBA390700736C0F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17202CBA390700736C0F /* HomeView.swift */; };
-		6C6B17322CBA390700736C0F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17212CBA390700736C0F /* Home.swift */; };
+		6C6B17322CBA390700736C0F /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17212CBA390700736C0F /* HomeFeature.swift */; };
 		6C6B17332CBA390700736C0F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17232CBA390700736C0F /* Color+Extension.swift */; };
 		6C6B17342CBA390700736C0F /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17242CBA390700736C0F /* Font+Extension.swift */; };
 		6C6B17352CBA390700736C0F /* MovieContentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17262CBA390700736C0F /* MovieContentCellView.swift */; };
@@ -29,6 +29,11 @@
 		6C6B17552CBA391B00736C0F /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17542CBA391B00736C0F /* MovieObject.swift */; };
 		6C6B17592CBA392500736C0F /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17572CBA392500736C0F /* BaseTargetType.swift */; };
 		6C6B175A2CBA392500736C0F /* MoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17582CBA392500736C0F /* MoyaProvider.swift */; };
+		6C6B175C2CBA549800736C0F /* LatestMovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B175B2CBA549800736C0F /* LatestMovieUseCase.swift */; };
+		6C6B175F2CBA8C0200736C0F /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B175E2CBA8C0200736C0F /* MoyaLoggingPlugin.swift */; };
+		6C6B17612CBA8C1900736C0F /* Extension+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17602CBA8C1900736C0F /* Extension+Log.swift */; };
+		6C6B17632CBA8C3B00736C0F /* Extension+OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17622CBA8C3B00736C0F /* Extension+OSLog.swift */; };
+		6C6B17652CBA8C4700736C0F /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B17642CBA8C4700736C0F /* Log.swift */; };
 		6C75F1AE2C9FD1D200E14BF3 /* tca_ytmoviesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C75F1AD2C9FD1D200E14BF3 /* tca_ytmoviesApp.swift */; };
 		6C75F1B02C9FD1D200E14BF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C75F1AF2C9FD1D200E14BF3 /* ContentView.swift */; };
 		6C75F1B22C9FD1D400E14BF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C75F1B12C9FD1D400E14BF3 /* Assets.xcassets */; };
@@ -47,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		6C6B17202CBA390700736C0F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		6C6B17212CBA390700736C0F /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		6C6B17212CBA390700736C0F /* HomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		6C6B17232CBA390700736C0F /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		6C6B17242CBA390700736C0F /* Font+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		6C6B17262CBA390700736C0F /* MovieContentCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieContentCellView.swift; sourceTree = "<group>"; };
@@ -68,6 +73,11 @@
 		6C6B17542CBA391B00736C0F /* MovieObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
 		6C6B17572CBA392500736C0F /* BaseTargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		6C6B17582CBA392500736C0F /* MoyaProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaProvider.swift; sourceTree = "<group>"; };
+		6C6B175B2CBA549800736C0F /* LatestMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMovieUseCase.swift; sourceTree = "<group>"; };
+		6C6B175E2CBA8C0200736C0F /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
+		6C6B17602CBA8C1900736C0F /* Extension+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Log.swift"; sourceTree = "<group>"; };
+		6C6B17622CBA8C3B00736C0F /* Extension+OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+OSLog.swift"; sourceTree = "<group>"; };
+		6C6B17642CBA8C4700736C0F /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		6C75F1AA2C9FD1D200E14BF3 /* tca-ytmovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tca-ytmovies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C75F1AD2C9FD1D200E14BF3 /* tca_ytmoviesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tca_ytmoviesApp.swift; sourceTree = "<group>"; };
 		6C75F1AF2C9FD1D200E14BF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				6C6B17202CBA390700736C0F /* HomeView.swift */,
-				6C6B17212CBA390700736C0F /* Home.swift */,
+				6C6B17212CBA390700736C0F /* HomeFeature.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -212,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				6C6B174A2CBA391700736C0F /* TopFiveMovieUseCase.swift */,
+				6C6B175B2CBA549800736C0F /* LatestMovieUseCase.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -237,10 +248,22 @@
 		6C6B17562CBA392500736C0F /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				6C6B175D2CBA8BF400736C0F /* Log */,
 				6C6B17572CBA392500736C0F /* BaseTargetType.swift */,
 				6C6B17582CBA392500736C0F /* MoyaProvider.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		6C6B175D2CBA8BF400736C0F /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				6C6B175E2CBA8C0200736C0F /* MoyaLoggingPlugin.swift */,
+				6C6B17602CBA8C1900736C0F /* Extension+Log.swift */,
+				6C6B17622CBA8C3B00736C0F /* Extension+OSLog.swift */,
+				6C6B17642CBA8C4700736C0F /* Log.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 		6C75F1A12C9FD1D200E14BF3 = {
@@ -407,6 +430,7 @@
 			files = (
 				6C6B174D2CBA391700736C0F /* Movie.swift in Sources */,
 				6C6B173C2CBA390700736C0F /* DiscoverView.swift in Sources */,
+				6C6B17652CBA8C4700736C0F /* Log.swift in Sources */,
 				6C6B173A2CBA390700736C0F /* MainTabView.swift in Sources */,
 				6C75F1B02C9FD1D200E14BF3 /* ContentView.swift in Sources */,
 				6C6B174E2CBA391700736C0F /* BaseAPI.swift in Sources */,
@@ -416,13 +440,17 @@
 				6C6B173B2CBA390700736C0F /* MainTabType.swift in Sources */,
 				6C6B17362CBA390700736C0F /* GenreTagView.swift in Sources */,
 				6C6B17592CBA392500736C0F /* BaseTargetType.swift in Sources */,
+				6C6B175C2CBA549800736C0F /* LatestMovieUseCase.swift in Sources */,
+				6C6B17612CBA8C1900736C0F /* Extension+Log.swift in Sources */,
 				6C6B17342CBA390700736C0F /* Font+Extension.swift in Sources */,
 				6C75F1AE2C9FD1D200E14BF3 /* tca_ytmoviesApp.swift in Sources */,
 				6C6B175A2CBA392500736C0F /* MoyaProvider.swift in Sources */,
 				6C6B174C2CBA391700736C0F /* MovieRepository.swift in Sources */,
 				6C6B17382CBA390700736C0F /* DetailView.swift in Sources */,
 				6C6B17352CBA390700736C0F /* MovieContentCellView.swift in Sources */,
-				6C6B17322CBA390700736C0F /* Home.swift in Sources */,
+				6C6B175F2CBA8C0200736C0F /* MoyaLoggingPlugin.swift in Sources */,
+				6C6B17632CBA8C3B00736C0F /* Extension+OSLog.swift in Sources */,
+				6C6B17322CBA390700736C0F /* HomeFeature.swift in Sources */,
 				6C6B17502CBA391700736C0F /* MovieService.swift in Sources */,
 				6C6B17372CBA390700736C0F /* SearchView.swift in Sources */,
 				6C6B17512CBA391700736C0F /* TopFiveMovieUseCase.swift in Sources */,

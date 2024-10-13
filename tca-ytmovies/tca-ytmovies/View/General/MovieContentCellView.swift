@@ -28,10 +28,7 @@ struct MovieContentCellView: View {
 //                Text(movie?.genre ?? "")
 //                    .font(.poppinsRegular14)
                 
-//                Text(movie?.content ?? "")
-//                    .multilineTextAlignment(.leading)
-//                    .lineLimit(5)
-//                    .font(.poppinsRegular13)
+//                Text(m .poppinsRegular13)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }

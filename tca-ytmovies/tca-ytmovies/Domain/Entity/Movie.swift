@@ -5,6 +5,8 @@
 //  Created by Subeen on 9/26/24.
 //
 
+import Foundation
+
 struct MovieModel: Codable, Equatable {
     let status: String?
     let statusMessage: String?
@@ -31,7 +33,8 @@ struct MovieData: Codable, Equatable {
     }
 }
 
-struct Movie: Codable, Equatable {
+struct Movie: Codable, Equatable, Identifiable {
+    let uuid = UUID().uuidString
     let id: Int?
     let url: String?
     let title: String?
@@ -43,6 +46,7 @@ struct Movie: Codable, Equatable {
     let largeCoverImage: String?
 
     enum CodingKeys: String, CodingKey {
+        case uuid
         case id = "id"
         case url = "url"
         case title = "title"
