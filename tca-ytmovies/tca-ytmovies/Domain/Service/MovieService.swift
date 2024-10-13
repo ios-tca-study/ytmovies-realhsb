@@ -8,16 +8,17 @@
 import Moya
 
 enum MovieService {
-    case fetchMovies(sort: String?, limit: Int?)
+    case fetchMovies(sort: String?, limit: Int?, genre: GenreType?, keyword: String?)
     case getTopFiveMovies(sort: String?, limit: Int?)
     case getLatestMovies
+
 }
 
 extension MovieService: BaseTargetType {
     
     var path: String {
         switch self {
-        case .fetchMovies(_, _):
+        case .fetchMovies:
             return BaseAPI.base.apiDesc
         
         case .getTopFiveMovies(_, _):
@@ -30,7 +31,7 @@ extension MovieService: BaseTargetType {
     
     var method: Moya.Method {
         switch self {
-        case .fetchMovies(let sort, let limit):
+        case .fetchMovies:
                 .get
             
         case .getTopFiveMovies(let sort, let limit):
@@ -43,10 +44,13 @@ extension MovieService: BaseTargetType {
     
     var task: Moya.Task {
         switch self {
-        case .fetchMovies(let sort, let limit):
+        case .fetchMovies(let sort, let limit, let genre, let keyword):
+            
             let parameters: [String : Any] = [
                 "sort": sort,
-                "limit": limit
+                "limit": limit,
+                "genre": genre?.description ?? "",  // TODO: 옵셔널 처리
+                "query_term": keyword ?? ""
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
 

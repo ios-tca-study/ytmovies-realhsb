@@ -13,7 +13,7 @@ struct SearchTextFieldStyle: TextFieldStyle {
             .font(.poppinsMedium18)
             .foregroundStyle(.white)
             .padding(.horizontal, 16)
-            .padding(.vertical, 28)
+            .padding(.vertical, 20)
             .background(Color.searchBarBackground)
             .clipShape(RoundedRectangle(cornerRadius: 10))
     }

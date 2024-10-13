@@ -6,33 +6,49 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct SearchView: View {
     
+    /// 검색 텍스트 분리하기
     @State var searchText: String = ""
     
+    @Bindable var store: StoreOf<SearchFeature>
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                TextField("search", text: $searchText)
-                    .textFieldStyle(SearchTextFieldStyle())
-                contentView
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ScrollView {
+                VStack {
+                    HStack {
+                        TextField("search", text: $searchText)
+                            .textFieldStyle(SearchTextFieldStyle())
+                        Button {
+                            store.send(.searchMovieUseCase(searchText, .action))
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                        }
+                    }
+                    contentView
+                }
+                .padding(.horizontal, 16)
             }
-            .padding(.horizontal, 16)
+        }
+        .onAppear {
+            store.send(.searchMovieUseCase(searchText, .action))
         }
     }
 
     var contentView: some View {
-        VStack {
-//            MovieContentCellView(movie: .stub01)
-//            MovieContentCellView(movie: .stub01)
-//            MovieContentCellView(movie: .stub01)
-//            MovieContentCellView(movie: .stub01)
-//            MovieContentCellView(movie: .stub01)
+        ForEach(store.searchMovieResult) { movie in
+            
+            VStack {
+                MovieContentCellView(movie: movie)
+            }
+            
         }
     }
 }
 
-#Preview {
-    SearchView()
-}
+//#Preview {
+//    SearchView()
+//}

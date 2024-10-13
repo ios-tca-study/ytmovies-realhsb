@@ -30,7 +30,14 @@ struct MainTabView: View {
                         HomeView(store: store)
                         
                     case .search:
-                        SearchView()
+                        let provider = MoyaProvider<MovieService>(plugins: [MoyaLoggingPlugin()])
+                        let repository = MovieRepository(provider: provider)
+                        let searchMovieUseCase = SearchMovieUseCase(repository: repository)
+
+                        let store = Store(initialState: SearchFeature.State()) {
+                            SearchFeature(searchMovieUseCase: searchMovieUseCase)
+                        }
+                        SearchView(store: store)
                     case .bookmark:
                         BookmarksView()
                     }

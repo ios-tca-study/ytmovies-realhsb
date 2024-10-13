@@ -20,9 +20,9 @@ struct MovieRepository: MovieRepositoryProtocol {
 
 extension MovieRepository {
     
-    func fetchMovies(sort: String?, limit: Int?) async throws -> [Movie] {
+    func fetchMovies(sort: String?, limit: Int?, genre: GenreType?, keyword: String?) async throws -> [Movie] {
         return try await withCheckedThrowingContinuation { continuation in
-            provider.request(.fetchMovies(sort: sort, limit: limit)) { result in
+            provider.request(.fetchMovies(sort: sort, limit: limit, genre: genre, keyword: keyword)) { result in
                 switch result {
                 case .success(let response):
                     

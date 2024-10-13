@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MovieRepositoryProtocol {
-    func fetchMovies(sort: String?, limit: Int?) async throws -> [Movie]
+    func fetchMovies(sort: String?, limit: Int?, genre: GenreType?, keyword: String?) async throws -> [Movie]
 }
