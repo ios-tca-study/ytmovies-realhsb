@@ -19,7 +19,7 @@ struct HomeFeature {
     struct State: Equatable {
         var isLoading: Bool = false
         var topFiveMovies: [Movie] = []
-        var latestMovie: Movie? = nil
+        var latestMovie: Movie = .stub01
     }
     
     // result는 not equatable 함
@@ -50,7 +50,7 @@ struct HomeFeature {
             case .getLatestMovie:
                 return .run { send in
                     let response = try await latestMovieUseCase.execute()
-                    await send(.updateLatestMovie(response!))
+                    await send(.updateLatestMovie(response ?? .stub01))
                 }
             case .updateTopFiveMovies(let response):
                 state.topFiveMovies = response

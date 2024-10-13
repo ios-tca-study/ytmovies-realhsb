@@ -13,10 +13,25 @@ struct MovieContentCellView: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
-            Image("")
-                .frame(width: 182, height: 273)
-                .background(Color.searchBarBackground)
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+            
+            AsyncImage(url:
+                        URL(string: movie?.largeCoverImage ?? "")) { phase in
+                switch phase {
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 182, height: 273)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                    
+                case .empty:
+                    Text("none")
+                case .failure(_):
+                    Text("none")
+                @unknown default:
+                    Text("none")
+                }
+            }
             
             VStack(alignment: .leading, spacing: 0) {
                 Text(movie?.title ?? "")

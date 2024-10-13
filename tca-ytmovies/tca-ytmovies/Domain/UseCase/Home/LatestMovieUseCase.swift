@@ -16,7 +16,7 @@ struct LatestMovieUseCase {
     
     /// 최신 영화 1편 조회
     public func execute() async throws -> Movie? {
-        let latestMovie = try await repository.fetchMovies(sort: "", limit: 1).first
+        let latestMovie = try await repository.fetchMovies(sort: "", limit: 1, genre: nil, keyword: nil).first
         return latestMovie
     }
 }

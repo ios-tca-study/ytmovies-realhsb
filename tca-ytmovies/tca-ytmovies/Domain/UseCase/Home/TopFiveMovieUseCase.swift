@@ -16,7 +16,7 @@ struct TopFiveMovieUseCase {
     
     /// Top5 영화 조회
     public func execute() async throws -> [Movie] {
-        let movies = try await repository.fetchMovies(sort: "", limit: 5)
+        let movies = try await repository.fetchMovies(sort: nil, limit: 5, genre: nil, keyword: nil)
         return movies
     }
 }
