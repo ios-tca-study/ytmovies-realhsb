@@ -58,3 +58,7 @@ struct Movie: Codable, Equatable, Identifiable {
         case largeCoverImage = "large_cover_image"
     }
 }
+
+extension Movie {
+    static var stub01: Movie = .init(id: 1, url: "", title: "", year: 2000, rating: 0.0, genres: [], summary: "", descriptionFull: "", largeCoverImage: "")
+}
